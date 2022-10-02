@@ -28,6 +28,7 @@ public class AnimeInfoController {
     private AnimeService02 animeService02;
 
 
+
     @GetMapping
     public R testGetAllAnimeInfo(){
         List<AnimeInfo> allAnimeInfo = animeInfoService.getAllAnimeInfo();
