@@ -16,6 +16,27 @@
     <properties>
         <java.version>1.8</java.version>
     </properties>
+
+
+    <profiles>
+        <profile>
+            <id>env_dev</id>
+            <properties>
+                <property.active>dev</property.active>
+            </properties>
+
+        </profile>
+        <profile>
+            <id>env_test</id>
+            <properties>
+                <property.active>test</property.active>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+    </profiles>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
