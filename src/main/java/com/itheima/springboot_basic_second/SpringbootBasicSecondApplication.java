@@ -11,7 +11,7 @@ public class SpringbootBasicSecondApplication {
 	public static void main(String[] args) {
 //		String[] strings = {"--server.port=8089"};
 //		SpringApplication.run(SpringbootBasicSecondApplication.class, strings);
-		SpringApplication.run(SpringbootBasicSecondApplication.class);
+		SpringApplication.run(SpringbootBasicSecondApplication.class,args);
 	}
 
 }
