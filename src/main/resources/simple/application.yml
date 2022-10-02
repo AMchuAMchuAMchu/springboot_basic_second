@@ -1,0 +1,36 @@
+#spring:
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://192.168.200.130:3306/anime_test01
+#    username: root
+#    password: root
+##    type: com.alibaba.druid.pool.DruidDataSource
+#
+#mybatis-plus:
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+
+#spring:
+#  profiles:
+#    active: pro
+#---
+#
+#server:
+#  port: 8081
+#spring:
+#  config:
+#    activate:
+#      on-profile: pro
+#---
+#spring:
+#  profiles: dev
+#server:
+#  port: 8082
+#
+#---
+#spring:
+#  profiles: test
+#
+#server:
+#  port: 8083
