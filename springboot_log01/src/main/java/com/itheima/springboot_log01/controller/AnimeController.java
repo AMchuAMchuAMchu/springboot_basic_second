@@ -1,5 +1,7 @@
 package com.itheima.springboot_log01.controller;
 
+import com.itheima.springboot_log01.log.LoggerPackage;
+import lombok.extern.slf4j.Slf4j;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,9 +18,9 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RequestMapping("/animeInfo")
 @RestController
-public class AnimeController {
+@Slf4j
+public class AnimeController{
 
-    public static final Logger log = LoggerFactory.getLogger(AnimeController.class);
 
     @GetMapping
     public String getAnimeInfo(){

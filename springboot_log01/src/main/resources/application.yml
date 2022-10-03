@@ -1,0 +1,10 @@
+#debug: true
+#logging:
+#  level:
+#    root: debug
+
+logging:
+  group:
+    anime: com.itheima
+  level:
+    anime: error
