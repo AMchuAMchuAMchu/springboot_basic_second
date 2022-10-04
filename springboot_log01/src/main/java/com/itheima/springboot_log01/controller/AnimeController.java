@@ -27,9 +27,11 @@ public class AnimeController{
         log.debug("debug...");
         log.info("info...");
         System.out.println("---||**&&^^");
+        System.out.println("---||**&&^^");
+        System.out.println("---||**&&^^");
         log.warn("warn...");
         log.error("error...");
-        return "static/index";
+        return "index";
     }
 
 

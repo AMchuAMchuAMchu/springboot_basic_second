@@ -22,3 +22,9 @@
 #    rollingpolicy:
 #      max-file-size: 3KB
 #      file-name-pattern: server.%d{yyyy-mm-dd}.%i.log
+
+
+spring:
+  devtools:
+    restart:
+      exclude: application.yml
