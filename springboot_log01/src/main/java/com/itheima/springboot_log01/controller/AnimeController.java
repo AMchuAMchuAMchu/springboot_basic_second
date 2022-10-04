@@ -26,9 +26,10 @@ public class AnimeController{
     public String getAnimeInfo(){
         log.debug("debug...");
         log.info("info...");
+        System.out.println("---||**&&^^");
         log.warn("warn...");
         log.error("error...");
-        return "<h1>Lycoris Recoil</h1>";
+        return "index";
     }
 
 
