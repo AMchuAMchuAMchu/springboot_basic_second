@@ -3,8 +3,18 @@
 #  level:
 #    root: debug
 
+
+#logging:
+#  group:
+#    anime: com.itheima
+#  level:
+#    anime: error
+
+#logging:
+#  pattern:
+#    console: "%clr(%d){red} - %16.16m %clr(%12.4t){cyan}:: %p>>%c%n"
 logging:
-  group:
-    anime: com.itheima
   level:
-    anime: error
+    root: debug
+  file:
+    name: server.log
