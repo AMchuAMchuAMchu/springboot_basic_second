@@ -29,7 +29,7 @@ public class AnimeController{
         System.out.println("---||**&&^^");
         log.warn("warn...");
         log.error("error...");
-        return "index";
+        return "static/index";
     }
 
 

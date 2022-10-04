@@ -13,12 +13,12 @@
 #logging:
 #  pattern:
 #    console: "%clr(%d){red} - %16.16m %clr(%12.4t){cyan}:: %p>>%c%n"
-logging:
-  level:
-    root: debug
-  file:
-    name: server.log
-  logback:
-    rollingpolicy:
-      max-file-size: 3KB
-      file-name-pattern: server.%d{yyyy-mm-dd}.%i.log
+#logging:
+#  level:
+#    root: debug
+#  file:
+#    name: server.log
+#  logback:
+#    rollingpolicy:
+#      max-file-size: 3KB
+#      file-name-pattern: server.%d{yyyy-mm-dd}.%i.log
