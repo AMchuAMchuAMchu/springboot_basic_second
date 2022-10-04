@@ -18,3 +18,7 @@ logging:
     root: debug
   file:
     name: server.log
+  logback:
+    rollingpolicy:
+      max-file-size: 3KB
+      file-name-pattern: server.%d{yyyy-mm-dd}.%i.log
