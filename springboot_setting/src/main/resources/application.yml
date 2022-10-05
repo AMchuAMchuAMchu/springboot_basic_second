@@ -1,10 +1,10 @@
 servers:
   ipaddr: 192.168.200.130
-  port: 80808
+  port: 8080
   timeout: 300
   size: 10
 
 druidDatasource:
   driverClassName: com.mysql.cj.jdbc.Driver777
   username: root
-  password: root
+  password: "0127"
