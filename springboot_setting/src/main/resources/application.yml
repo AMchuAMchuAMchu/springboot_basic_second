@@ -1,0 +1,4 @@
+servers:
+  ipaddr: 192.168.200.130
+  port: 8080
+  timeout: 300
