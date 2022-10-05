@@ -4,6 +4,6 @@ servers:
   timeout: 300
 
 druidDatasource:
-  driverClassName: com.mysql.cj.jdbc.Driver
+  driverClassName: com.mysql.cj.jdbc.Driver777
   username: root
   password: root

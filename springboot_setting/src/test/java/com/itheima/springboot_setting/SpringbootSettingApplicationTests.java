@@ -1,13 +1,11 @@
 package com.itheima.springboot_setting;
 
-import com.itheima.springboot_setting.dao.DruidDataSourceTest;
+import com.alibaba.druid.pool.DruidDataSource;
 import com.itheima.springboot_setting.pojo.ServerConfig;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ConfigurableApplicationContext;
-
-import javax.sql.DataSource;
 
 @SpringBootTest
 class SpringbootSettingApplicationTests {
@@ -19,15 +17,20 @@ class SpringbootSettingApplicationTests {
     @Test
     public void testDruidDataSource(){
 
-        DruidDataSourceTest bean = run.getBean(DruidDataSourceTest.class);
+        DruidDataSource bean = run.getBean(DruidDataSource.class);
 
-        DataSource druidDataSource = bean.getDruidDataSource();
+        String driverClassName = bean.getDriverClassName();
+        String username = bean.getUsername();
+        String password = bean.getPassword();
+
 
         System.out.println();
         System.out.println();
         System.out.println();
 
-        System.out.println(druidDataSource);
+        System.out.println(driverClassName);
+        System.out.println(username);
+        System.out.println(password);
 
     }
 

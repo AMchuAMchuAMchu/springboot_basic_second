@@ -2,7 +2,12 @@ package com.itheima.springboot_setting.pojo;
 
 import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.boot.convert.DurationFormat;
+import org.springframework.boot.convert.DurationUnit;
 import org.springframework.stereotype.Component;
+
+import java.time.Duration;
+import java.time.temporal.ChronoUnit;
 
 /**
  * Description ==> TODO
@@ -19,9 +24,13 @@ public class ServerConfig {
 
     private String ipaddr;
 
-    private String port;
 
-    private Integer timeout;
+
+    private Duration port;
+
+
+    @DurationUnit(ChronoUnit.DAYS)
+    private Duration timeout;
 
 
 
