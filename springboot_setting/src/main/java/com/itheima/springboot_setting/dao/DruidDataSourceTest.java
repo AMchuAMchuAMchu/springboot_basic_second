@@ -2,6 +2,8 @@ package com.itheima.springboot_setting.dao;
 
 import com.alibaba.druid.pool.DruidDataSource;
 import com.alibaba.druid.pool.DruidDataSourceFactory;
+import com.itheima.springboot_setting.pojo.ServerConfig;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Component;
@@ -18,6 +20,9 @@ import javax.sql.DataSource;
  */
 @Component
 public class DruidDataSourceTest {
+
+
+
 
     @Bean
     @ConfigurationProperties(prefix = "druiddatasource")
