@@ -1,7 +1,8 @@
 servers:
   ipaddr: 192.168.200.130
-  port: 8080
+  port: 80808
   timeout: 300
+  size: 10
 
 druidDatasource:
   driverClassName: com.mysql.cj.jdbc.Driver777
