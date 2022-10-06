@@ -17,6 +17,7 @@ import org.springframework.test.web.servlet.ResultMatcher;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import org.springframework.test.web.servlet.result.ContentResultMatchers;
+import org.springframework.test.web.servlet.result.HeaderResultMatchers;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.result.StatusResultMatchers;
 
@@ -36,6 +37,22 @@ class SpringbootTest01ApplicationTests {
     @Autowired
     private MockMvc mockMvc;
 
+
+    @Test
+    void testHeaders() throws Exception {
+
+        MockHttpServletRequestBuilder st = MockMvcRequestBuilders.get("/animeInfo/json");
+
+        ResultActions perform = mockMvc.perform(st);
+
+        HeaderResultMatchers header = MockMvcResultMatchers.header();
+
+        ResultMatcher string = header.string("Content-Type", "application/json");
+
+        perform.andExpect(string);
+
+
+    }
 
     @Test
     void testJson() throws Exception {
