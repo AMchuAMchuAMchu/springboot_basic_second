@@ -4,6 +4,7 @@ import com.itheima.springboot_test01.test.AnimeName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureWebMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Import;
@@ -16,14 +17,20 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 //@SpringBootTest(properties = {"test.prop=testValue02"},args = {"--test.prop=testValue03"})
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @Import(AnimeName.class)
-@AutoConfigureWebMvc
+@AutoConfigureMockMvc
 class SpringbootTest01ApplicationTests {
 
+
+    @Value("${test.prop}")
+    private String testValue01;
+
+    @Autowired
+    private String animeName;
 
     @Test
     void testMockmvc(@Autowired MockMvc mockMvc) throws Exception {
 
-        MockHttpServletRequestBuilder msrb = MockMvcRequestBuilders.get("/animeInfo/text");
+        MockHttpServletRequestBuilder msrb = MockMvcRequestBuilders.get("/animeInfo/text1");
 
         ResultActions perform = mockMvc.perform(msrb);
 
@@ -33,11 +40,6 @@ class SpringbootTest01ApplicationTests {
     }
 
 
-    @Value("${test.prop}")
-    private String testValue01;
-
-    @Autowired
-    private String animeName;
 
 
 
