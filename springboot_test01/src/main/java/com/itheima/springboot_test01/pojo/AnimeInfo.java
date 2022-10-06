@@ -1,6 +1,7 @@
 package com.itheima.springboot_test01.pojo;
 
 import lombok.Data;
+import org.springframework.stereotype.Component;
 
 /**
  * Description ==> TODO
@@ -10,6 +11,7 @@ import lombok.Data;
  * CreateTime ==> 2022-10-06 08:39:37
  * Author ==> _02雪乃赤瞳楪祈校条祭_艾米丽可锦木千束木更七草荠_制作委员会_start
  */
+@Component
 @Data
 public class AnimeInfo {
 

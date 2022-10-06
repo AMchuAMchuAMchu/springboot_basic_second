@@ -23,7 +23,7 @@ class SpringbootTest01ApplicationTests {
     @Test
     void testMockmvc(@Autowired MockMvc mockMvc) throws Exception {
 
-        MockHttpServletRequestBuilder msrb = MockMvcRequestBuilders.get("/animeInfo");
+        MockHttpServletRequestBuilder msrb = MockMvcRequestBuilders.get("/animeInfo/text");
 
         ResultActions perform = mockMvc.perform(msrb);
 
