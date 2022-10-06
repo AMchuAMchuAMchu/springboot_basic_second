@@ -4,6 +4,7 @@ import com.itheima.springboot_test01.test.AnimeName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.convert.PeriodFormat;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureWebMvc;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -31,19 +32,21 @@ class SpringbootTest01ApplicationTests {
     private String animeName;
 
     @Autowired
-    private  MockMvc mockMvc = null;
+    private static MockMvc mockMvc;
 
-    private  MockHttpServletRequestBuilder msrb = null;
 
-    private  ResultActions perform;
+    public static ResultActions getAction() {
+        ResultActions perform = null;
 
-     {
-        msrb = MockMvcRequestBuilders.get("/animeInfo/text");
+        MockHttpServletRequestBuilder msrb = MockMvcRequestBuilders.get("/animeInfo/text");
+
         try {
             perform = mockMvc.perform(msrb);
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+        return perform;
     }
 
 
@@ -54,7 +57,9 @@ class SpringbootTest01ApplicationTests {
 
         ResultMatcher ok = status.isOk();
 
-        perform.andExpect(ok);
+        ResultActions action = getAction();
+
+        action.andExpect(ok);
 
 
     }
@@ -71,14 +76,10 @@ class SpringbootTest01ApplicationTests {
     }
 
 
-
-
-
-
     @Test
-    void testPropValue(){
+    void testPropValue() {
 
-        System.out.println("testValue::"+testValue01);
+        System.out.println("testValue::" + testValue01);
 
     }
 
