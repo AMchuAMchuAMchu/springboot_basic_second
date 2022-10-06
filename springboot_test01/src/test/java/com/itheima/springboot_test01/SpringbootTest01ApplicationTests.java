@@ -9,12 +9,14 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureWebMvc;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.annotation.Import;
+import org.springframework.stereotype.Component;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MockMvcBuilder;
 import org.springframework.test.web.servlet.ResultActions;
 import org.springframework.test.web.servlet.ResultMatcher;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import org.springframework.test.web.servlet.result.ContentResultMatchers;
 import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import org.springframework.test.web.servlet.result.StatusResultMatchers;
 
@@ -32,35 +34,58 @@ class SpringbootTest01ApplicationTests {
     private String animeName;
 
     @Autowired
-    private static MockMvc mockMvc;
+    private MockMvc mockMvc;
 
 
-    public static ResultActions getAction(){
+    @Test
+    void testJson() throws Exception {
 
-        MockHttpServletRequestBuilder msrb = MockMvcRequestBuilders.get("/animeInfo/text");
+        MockHttpServletRequestBuilder st = MockMvcRequestBuilders.get("/animeInfo/json");
 
-        ResultActions perform = null;
-        try {
-            perform = mockMvc.perform(msrb);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+        ResultActions perform = mockMvc.perform(st);
 
-        return perform;
+        ContentResultMatchers content = MockMvcResultMatchers.content();
+
+        ResultMatcher json = content.json("{\"name\":\"Lycoris Recoil\",\"character01\":\"锦木千束/安济知佳\",\"character02\":\"井之上泷奈/若山诗音\",\"releaseTime\":2022,\"id\":5201314}");
+
+        perform.andExpect(json);
+
+
     }
 
 
 
     @Test
+    void testText() throws Exception {
+
+        MockHttpServletRequestBuilder st = MockMvcRequestBuilders.get("/animeInfo/text");
+
+        ResultActions perform = mockMvc.perform(st);
+
+        ContentResultMatchers content = MockMvcResultMatchers.content();
+
+        ResultMatcher lycoris_recoil = content.string("Lycoris Recoil");
+
+        perform.andExpect(lycoris_recoil);
+
+
+    }
+
+
+    @Test
     void testStaus() throws Exception {
+
+        MockHttpServletRequestBuilder st = MockMvcRequestBuilders.get("/animeInfo/text");
+
+        ResultActions perform = mockMvc.perform(st);
 
         StatusResultMatchers status = MockMvcResultMatchers.status();
 
         ResultMatcher ok = status.isOk();
 
-        ResultActions action = getAction();
+        perform.andExpect(ok);
 
-        action.andExpect(ok);
+
 
 
     }
