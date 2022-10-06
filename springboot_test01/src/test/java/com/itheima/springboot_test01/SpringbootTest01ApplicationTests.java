@@ -11,8 +11,11 @@ import org.springframework.context.annotation.Import;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.MockMvcBuilder;
 import org.springframework.test.web.servlet.ResultActions;
+import org.springframework.test.web.servlet.ResultMatcher;
 import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
+import org.springframework.test.web.servlet.result.StatusResultMatchers;
 
 //@SpringBootTest(properties = {"test.prop=testValue02"},args = {"--test.prop=testValue03"})
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -27,15 +30,43 @@ class SpringbootTest01ApplicationTests {
     @Autowired
     private String animeName;
 
+    @Autowired
+    private  MockMvc mockMvc = null;
+
+    private  MockHttpServletRequestBuilder msrb = null;
+
+    private  ResultActions perform;
+
+     {
+        msrb = MockMvcRequestBuilders.get("/animeInfo/text");
+        try {
+            perform = mockMvc.perform(msrb);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
+    @Test
+    void testStaus() throws Exception {
+
+        StatusResultMatchers status = MockMvcResultMatchers.status();
+
+        ResultMatcher ok = status.isOk();
+
+        perform.andExpect(ok);
+
+
+    }
+
     @Test
     void testMockmvc(@Autowired MockMvc mockMvc) throws Exception {
 
-        MockHttpServletRequestBuilder msrb = MockMvcRequestBuilders.get("/animeInfo/text1");
+        MockHttpServletRequestBuilder msrb = MockMvcRequestBuilders.get("/animeInfo/text");
 
         ResultActions perform = mockMvc.perform(msrb);
 
         System.out.println(perform);
-
 
     }
 
