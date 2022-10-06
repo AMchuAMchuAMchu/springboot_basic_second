@@ -35,11 +35,11 @@ class SpringbootTest01ApplicationTests {
     private static MockMvc mockMvc;
 
 
-    public static ResultActions getAction() {
-        ResultActions perform = null;
+    public static ResultActions getAction(){
 
         MockHttpServletRequestBuilder msrb = MockMvcRequestBuilders.get("/animeInfo/text");
 
+        ResultActions perform = null;
         try {
             perform = mockMvc.perform(msrb);
         } catch (Exception e) {
@@ -48,6 +48,7 @@ class SpringbootTest01ApplicationTests {
 
         return perform;
     }
+
 
 
     @Test
