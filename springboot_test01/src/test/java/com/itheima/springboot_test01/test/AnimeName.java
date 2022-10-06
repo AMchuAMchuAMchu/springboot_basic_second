@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
  * CreateTime ==> 2022-10-06 08:14:00
  * Author ==> _02雪乃赤瞳楪祈校条祭_艾米丽可锦木千束木更七草荠_制作委员会_start
  */
-@Component
+//@Component
 public class AnimeName {
 
     @Bean
