@@ -11,7 +11,7 @@ import org.springframework.transaction.annotation.Transactional;
 import java.util.List;
 
 @SpringBootTest
-@Transactional
+//@Transactional
 class SpringbootTransition01DaoApplicationTests {
 
     @Autowired

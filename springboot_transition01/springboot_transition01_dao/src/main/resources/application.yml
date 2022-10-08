@@ -4,3 +4,10 @@ spring:
     url: jdbc:mysql://localhost:3306/anime_test01
     username: root
     password: root
+
+animeTest:
+  num01: ${random.int}
+  num02: ${random.int(10,20)}
+  num03: ${random.uuid}
+  num04: ${random.value}
+  num05: ${random.long}
