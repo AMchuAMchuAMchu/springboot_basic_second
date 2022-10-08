@@ -22,11 +22,37 @@ public class AnimeInfoService {
     @Autowired
     private AnimeInfoMapper animeInfoMapper;
 
-    public List<AnimeInfo> getAll(){
+    @Autowired
+    private AnimeInfo animeInfo;
+
+
+    public void insertOne() {
+
+        animeInfo.setName("刀剑神域Alicization");
+
+        animeInfo.setReleaseTime(2018);
+
+        animeInfo.setCharacter01("尤吉欧");
+
+        animeInfo.setCharacter02("Alici");
+
+        animeInfo.setId(22);
+
+        System.out.println("service execute....");
+
+        System.out.println("尤吉欧...正在挥动着蓝蔷薇之剑...");
+
+        animeInfoMapper.insertOne(animeInfo);
+
+    }
+
+    public List<AnimeInfo> getAll() {
 
         List<AnimeInfo> all = animeInfoMapper.getAll();
 
+        System.out.println("service execute....");
 
+        System.out.println("我是尤吉欧...我正在挥动着蓝蔷薇之剑...");
 
         return all;
 

@@ -1,6 +1,7 @@
 package com.itheima.springboot_transition01_dao.pojo;
 
 import lombok.Data;
+import org.springframework.stereotype.Component;
 
 /**
  * Description ==> TODO
@@ -11,6 +12,7 @@ import lombok.Data;
  * Author ==> _02雪乃赤瞳楪祈校条祭_艾米丽可锦木千束木更七草荠_制作委员会_start
  */
 @Data
+@Component
 public class AnimeInfo {
 
     private String name;

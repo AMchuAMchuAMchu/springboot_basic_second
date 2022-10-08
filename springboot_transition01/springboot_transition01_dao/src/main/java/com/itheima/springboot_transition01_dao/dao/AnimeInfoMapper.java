@@ -1,6 +1,7 @@
 package com.itheima.springboot_transition01_dao.dao;
 
 import com.itheima.springboot_transition01_dao.pojo.AnimeInfo;
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
 
@@ -19,4 +20,7 @@ public interface AnimeInfoMapper {
 
     @Select("select * from anime_info")
     List<AnimeInfo> getAll();
+
+    @Insert("insert into anime_info values (#{name},#{releaseTime},#{character01},#{character02},#{id})")
+    void insertOne(AnimeInfo animeInfo);
 }
