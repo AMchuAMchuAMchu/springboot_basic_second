@@ -36,7 +36,7 @@ public class AnimeInfoService {
 
         animeInfo.setCharacter02("Alici");
 
-        animeInfo.setId(22);
+        animeInfo.setId(23);
 
         System.out.println("service execute....");
 
