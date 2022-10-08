@@ -4,6 +4,7 @@ import lombok.Data;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.stereotype.Component;
 
 /**
  * Description ==> TODO
@@ -14,6 +15,7 @@ import org.springframework.context.annotation.Configuration;
  * Author ==> _02雪乃赤瞳楪祈校条祭_艾米丽可锦木千束木更七草荠_制作委员会_start
  */
 @Data
+@Component
 @ConfigurationProperties(prefix = "animetest")
 public class RandomTest {
 
