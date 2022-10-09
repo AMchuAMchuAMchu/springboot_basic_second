@@ -45,7 +45,6 @@ class SpringbootTransition01DaoApplicationTests {
 
         all.forEach(System.out::println);
 
-
     }
 
 }
