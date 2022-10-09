@@ -3,8 +3,10 @@ package com.itheima.springboot_transition01_dao;
 import com.itheima.springboot_transition01_dao.pojo.AnimeInfo;
 import com.itheima.springboot_transition01_dao.random.RandomTest;
 import com.itheima.springboot_transition01_dao.service.AnimeInfoService;
+import com.itheima.springboot_transition01_dao.service.JdbcTemplateTest01;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.batch.BatchProperties;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.annotation.Transient;
 import org.springframework.transaction.annotation.Transactional;
@@ -22,6 +24,17 @@ class SpringbootTransition01DaoApplicationTests {
 
     @Autowired
     private RandomTest randomTest;
+
+
+    @Autowired
+    private JdbcTemplateTest01 jdbcTemplateTest01;
+
+    @Test
+    void testJdbcTemplate01(){
+
+        jdbcTemplateTest01.testJdbc();
+
+    }
 
     @Test
     void testRandomTest(){
