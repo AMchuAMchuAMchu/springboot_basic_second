@@ -31,7 +31,7 @@ public class JdbcTemplateTest01 {
 
     public void testJdbc(){
 
-        String sql = "select * from anime_test01";
+        String sql = "select * from anime_info";
 
         List<AnimeInfo> animeInfos = jdbcTemplate.query(sql, new RowMapper<AnimeInfo>() {
             @Override
