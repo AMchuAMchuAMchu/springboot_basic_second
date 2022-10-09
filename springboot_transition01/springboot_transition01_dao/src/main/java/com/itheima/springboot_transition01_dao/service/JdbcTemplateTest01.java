@@ -40,7 +40,7 @@ public class JdbcTemplateTest01 {
                 animeInfo.setName(rs.getString("name"));
                 animeInfo.setReleaseTime(rs.getInt("release_time"));
                 animeInfo.setCharacter01(rs.getString("character01"));
-                animeInfo.setCharacter01(rs.getString("character02"));
+                animeInfo.setCharacter02(rs.getString("character02"));
                 animeInfo.setId(rs.getInt("id"));
 
                 return animeInfo;
