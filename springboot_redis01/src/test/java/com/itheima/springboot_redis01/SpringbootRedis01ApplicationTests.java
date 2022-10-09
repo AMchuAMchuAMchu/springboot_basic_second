@@ -5,15 +5,31 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.redis.core.ListOperations;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.SetOperations;
 import org.springframework.data.redis.core.ValueOperations;
 
 import java.util.List;
+import java.util.Set;
 
 @SpringBootTest
 class SpringbootRedis01ApplicationTests {
 
 	@Autowired
 	private RedisTemplate redisTemplate;
+
+	@Test
+	void testSet(){
+
+		SetOperations so = redisTemplate.opsForSet();
+
+		so.add("name03","影宅","shadow house","艾米丽可","艾米丽可");
+
+		Set name03 = so.members("name03");
+
+		name03.forEach(System.out::println);
+
+
+	}
 
 
 	@Test
