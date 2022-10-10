@@ -18,7 +18,7 @@ class SpringbootMongodb01ApplicationTests {
     @Test
     void testFind(){
 
-        List<AnimeInfo> all = mongoTemplate.findAll(AnimeInfo.class);
+        List<AnimeInfo> all = mongoTemplate.findAll(AnimeInfo.class,"anime_info");
 
         all.forEach(System.out::println);
 
