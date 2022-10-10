@@ -18,7 +18,7 @@ class SpringbootMongodb01ApplicationTests {
     @Test
     void testFind(){
 
-        List<AnimeInfo> all = mongoTemplate.findAll(AnimeInfo.class,"anime_info");
+        List<AnimeInfo> all = mongoTemplate.findAll(AnimeInfo.class);
 
         all.forEach(System.out::println);
 
@@ -40,11 +40,15 @@ class SpringbootMongodb01ApplicationTests {
         AnimeInfo animeInfo04 = new AnimeInfo(
                 "engage kiss","2022","修齐藤壮马","木更会泽纱弥","4"
         );
+        AnimeInfo animeInfo05 = new AnimeInfo(
+                "Alicization刀剑神域","2022","kirito","Alicization","5"
+        );
 
-        mongoTemplate.insert(animeInfo01);
-        mongoTemplate.insert(animeInfo02);
-        mongoTemplate.insert(animeInfo03);
-        mongoTemplate.insert(animeInfo04);
+        mongoTemplate.save(animeInfo01);
+        mongoTemplate.save(animeInfo02);
+        mongoTemplate.save(animeInfo03);
+        mongoTemplate.save(animeInfo04);
+        mongoTemplate.insert(animeInfo05);
 
 
     }
