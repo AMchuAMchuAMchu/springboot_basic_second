@@ -24,5 +24,11 @@ public class AnimeInfo {
 
     private String id;
 
-
+    public AnimeInfo(String name, String releaseTime, String character01, String character02, String id) {
+        this.name = name;
+        this.releaseTime = releaseTime;
+        this.character01 = character01;
+        this.character02 = character02;
+        this.id = id;
+    }
 }
