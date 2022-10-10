@@ -24,9 +24,9 @@ class SpringbootMongodb01ApplicationTests {
 
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
 
-        Date parse = sdf.parse("1665366523597");
+        long l = 1665366523597l;
 
-        String format = sdf.format(parse);
+        String format = sdf.format(new Date(l));
 
         System.out.println(format);
 
