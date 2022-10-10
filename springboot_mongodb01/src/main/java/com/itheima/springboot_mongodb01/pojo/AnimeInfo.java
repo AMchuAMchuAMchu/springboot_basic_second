@@ -13,6 +13,8 @@ import lombok.Data;
 @Data
 public class AnimeInfo {
 
+    private String _id;
+
     private String name;
 
     private String releaseTime;
