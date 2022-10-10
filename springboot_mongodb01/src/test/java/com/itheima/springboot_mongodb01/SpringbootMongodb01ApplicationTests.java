@@ -18,17 +18,25 @@ class SpringbootMongodb01ApplicationTests {
     @Autowired
     private MongoTemplate mongoTemplate;
 
+//    @Autowired
+//    private AnimeInfo animeInfo;
+
 
     @Test
     void test() throws ParseException {
 
+//        String id = animeInfo.getId();
+
+
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
 
-        long l = 1665366523597l;
+        long l = 1665444405758l;
 
         String format = sdf.format(new Date(l));
 
         System.out.println(format);
+//        throw new RuntimeException("刀剑神域Alicization...");
+
 
 
     }
