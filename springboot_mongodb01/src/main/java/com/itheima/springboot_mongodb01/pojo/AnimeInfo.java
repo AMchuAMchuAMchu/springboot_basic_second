@@ -38,19 +38,6 @@ public class AnimeInfo {
         this.id = id;
     }
 
-    @Test
-    public void test() throws ParseException {
-
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
-
-        Date parse = sdf.parse("1665366523597");
-
-        String format = sdf.format(parse);
-
-        System.out.println(format);
-
-
-    }
 
 
 

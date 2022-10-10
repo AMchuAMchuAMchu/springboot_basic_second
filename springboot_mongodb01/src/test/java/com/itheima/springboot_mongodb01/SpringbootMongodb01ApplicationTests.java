@@ -6,6 +6,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.mongodb.core.MongoTemplate;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 @SpringBootTest
@@ -14,6 +17,23 @@ class SpringbootMongodb01ApplicationTests {
 
     @Autowired
     private MongoTemplate mongoTemplate;
+
+
+    @Test
+    void test() throws ParseException {
+
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+
+        Date parse = sdf.parse("1665366523597");
+
+        String format = sdf.format(parse);
+
+        System.out.println(format);
+
+
+    }
+
+
 
     @Test
     void testFind(){
