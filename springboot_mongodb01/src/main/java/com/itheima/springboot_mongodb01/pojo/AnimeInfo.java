@@ -1,6 +1,12 @@
 package com.itheima.springboot_mongodb01.pojo;
 
 import lombok.Data;
+import org.junit.Test;
+import org.springframework.data.mongodb.core.mapping.TextScore;
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 /**
  * Description ==> TODO
@@ -31,4 +37,23 @@ public class AnimeInfo {
         this.character02 = character02;
         this.id = id;
     }
+
+    @Test
+    public void test() throws ParseException {
+
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+
+        Date parse = sdf.parse("1665366523597");
+
+        String format = sdf.format(parse);
+
+        System.out.println(format);
+
+
+    }
+
+
+
+
+
 }
