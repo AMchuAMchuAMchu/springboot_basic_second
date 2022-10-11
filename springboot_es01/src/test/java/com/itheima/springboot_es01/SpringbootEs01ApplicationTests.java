@@ -1,8 +1,7 @@
 package com.itheima.springboot_es01;
 
-import com.fasterxml.jackson.databind.introspect.AnnotatedMember;
 import com.google.gson.Gson;
-import com.itheima.springboot_es01.dao.dao.AnimeInfoMapper;
+import com.itheima.springboot_es01.dao.AnimeInfoMapper;
 import com.itheima.springboot_es01.pojo.AnimeInfo;
 import org.elasticsearch.action.admin.indices.create.CreateIndexRequest;
 import org.elasticsearch.action.index.IndexRequest;

@@ -1,4 +1,4 @@
-package com.itheima.springboot_es01.dao.dao;
+package com.itheima.springboot_es01.dao;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.itheima.springboot_es01.pojo.AnimeInfo;
