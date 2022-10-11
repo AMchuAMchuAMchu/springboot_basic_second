@@ -19,7 +19,6 @@ import java.io.Serializable;
 @Mapper
 public interface AnimeInfoMapper extends BaseMapper<AnimeInfo> {
 
-    @Override
-    @Cacheable(value = "cache",key = "#id")
-    AnimeInfo selectById(Serializable id);
+    @Cacheable(value = "cacheSpace",key = "#id")
+    AnimeInfo selectById(Integer id);
 }
