@@ -18,8 +18,6 @@ class SpringbootTestmpApplicationTests {
     void testAnime(){
         List<AnimeInfo> animeInfos = animeInfoMapper.selectList(null);
         animeInfos.forEach(System.out::println);
-
-
     }
 
     @Test
