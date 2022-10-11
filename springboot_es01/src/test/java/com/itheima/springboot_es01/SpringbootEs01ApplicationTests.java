@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import com.itheima.springboot_es01.dao.AnimeInfoMapper;
 import com.itheima.springboot_es01.pojo.AnimeInfo;
 import org.elasticsearch.action.admin.indices.create.CreateIndexRequest;
+import org.elasticsearch.action.bulk.BulkRequest;
 import org.elasticsearch.action.index.IndexRequest;
 import org.elasticsearch.client.RequestOptions;
 import org.elasticsearch.client.RestHighLevelClient;
@@ -26,6 +27,31 @@ class SpringbootEs01ApplicationTests {
 
     @Autowired
     private AnimeInfoMapper animeInfoMapper;
+
+
+
+    @Test
+    void testBulk() throws IOException {
+
+        List<AnimeInfo> animeInfos = animeInfoMapper.selectList(null);
+
+
+        BulkRequest bulk = new BulkRequest();
+
+        animeInfos.forEach(item->{
+            Gson gson = new Gson();
+            String s = gson.toJson(item);
+            IndexRequest animes = new IndexRequest().index("animes").id(item.getId().toString());
+            animes.source(s,XContentType.JSON);
+            bulk.add(animes);
+        });
+
+        rhlc.bulk(bulk,RequestOptions.DEFAULT);
+
+
+    }
+
+
 
     @Test
     void testMp(){
