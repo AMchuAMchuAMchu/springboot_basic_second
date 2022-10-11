@@ -5,6 +5,8 @@ import com.itheima.springboot_es01.dao.AnimeInfoMapper;
 import com.itheima.springboot_es01.pojo.AnimeInfo;
 import org.elasticsearch.action.admin.indices.create.CreateIndexRequest;
 import org.elasticsearch.action.bulk.BulkRequest;
+import org.elasticsearch.action.get.GetRequest;
+import org.elasticsearch.action.get.GetResponse;
 import org.elasticsearch.action.index.IndexRequest;
 import org.elasticsearch.client.RequestOptions;
 import org.elasticsearch.client.RestHighLevelClient;
@@ -27,6 +29,20 @@ class SpringbootEs01ApplicationTests {
 
     @Autowired
     private AnimeInfoMapper animeInfoMapper;
+
+    @Test
+    void testGetAnime() throws IOException {
+
+        GetRequest request = new GetRequest("animes","21");
+
+        GetResponse documentFields = rhlc.get(request, RequestOptions.DEFAULT);
+
+        String sourceAsString = documentFields.getSourceAsString();
+
+        System.out.println(" >> "+sourceAsString);
+
+
+    }
 
 
 
