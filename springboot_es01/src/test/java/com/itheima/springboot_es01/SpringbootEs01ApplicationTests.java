@@ -15,6 +15,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import java.io.IOException;
+import java.util.List;
 
 @SpringBootTest
 class SpringbootEs01ApplicationTests {
@@ -28,6 +29,15 @@ class SpringbootEs01ApplicationTests {
     private AnimeInfoMapper animeInfoMapper;
 
     @Test
+    void testMp(){
+
+
+        List<AnimeInfo> animeInfos = animeInfoMapper.selectList(null);
+        animeInfos.forEach(System.out::println);
+
+    }
+
+    @Test
     void testAll() throws IOException {
 
         AnimeInfo animeInfo = animeInfoMapper.selectById(1);
@@ -38,7 +48,7 @@ class SpringbootEs01ApplicationTests {
         IndexRequest request = new IndexRequest().index("animes").id(animeInfo.getId().toString());
         request.source(s, XContentType.JSON);
         rhlc.index(request,RequestOptions.DEFAULT);
-        
+
 
 
 
