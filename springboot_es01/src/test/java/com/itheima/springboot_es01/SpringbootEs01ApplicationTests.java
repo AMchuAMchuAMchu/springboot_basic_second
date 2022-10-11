@@ -8,9 +8,15 @@ import org.elasticsearch.action.bulk.BulkRequest;
 import org.elasticsearch.action.get.GetRequest;
 import org.elasticsearch.action.get.GetResponse;
 import org.elasticsearch.action.index.IndexRequest;
+import org.elasticsearch.action.search.SearchRequest;
+import org.elasticsearch.action.search.SearchResponse;
 import org.elasticsearch.client.RequestOptions;
 import org.elasticsearch.client.RestHighLevelClient;
 import org.elasticsearch.common.xcontent.XContentType;
+import org.elasticsearch.index.query.QueryBuilder;
+import org.elasticsearch.index.query.QueryBuilders;
+import org.elasticsearch.search.SearchHits;
+import org.elasticsearch.search.builder.SearchSourceBuilder;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,6 +35,27 @@ class SpringbootEs01ApplicationTests {
 
     @Autowired
     private AnimeInfoMapper animeInfoMapper;
+
+
+    @Test
+    void testQueryByCondition() throws IOException {
+
+        SearchRequest request = new SearchRequest();
+
+        SearchSourceBuilder searchSourceBuilder = new SearchSourceBuilder();
+
+        searchSourceBuilder.query(QueryBuilders.termQuery("all","锦木千束"));
+
+        request.source(searchSourceBuilder);
+
+        SearchResponse search = rhlc.search(request, RequestOptions.DEFAULT);
+
+        SearchHits hits = search.getHits();
+
+        hits.forEach(System.out::println);
+
+
+    }
 
     @Test
     void testGetAnime() throws IOException {
