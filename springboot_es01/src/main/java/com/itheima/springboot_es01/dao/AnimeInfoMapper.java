@@ -3,7 +3,10 @@ package com.itheima.springboot_es01.dao;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.itheima.springboot_es01.pojo.AnimeInfo;
 import org.apache.ibatis.annotations.Mapper;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Repository;
+
+import java.io.Serializable;
 
 /**
  * Description ==> TODO
@@ -15,4 +18,8 @@ import org.springframework.stereotype.Repository;
  */
 @Mapper
 public interface AnimeInfoMapper extends BaseMapper<AnimeInfo> {
+
+    @Override
+    @Cacheable(value = "cache",key = "#id")
+    AnimeInfo selectById(Serializable id);
 }

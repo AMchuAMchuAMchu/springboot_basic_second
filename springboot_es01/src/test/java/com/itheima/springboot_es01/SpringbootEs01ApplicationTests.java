@@ -22,6 +22,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
+import javax.swing.*;
 import java.io.IOException;
 import java.util.List;
 
@@ -35,6 +36,17 @@ class SpringbootEs01ApplicationTests {
 
     @Autowired
     private AnimeInfoMapper animeInfoMapper;
+
+
+
+    @Test
+    void testCache(){
+
+        AnimeInfo animeInfo = animeInfoMapper.selectById(1);
+        System.out.println(animeInfo);
+
+
+    }
 
 
     @Test
